@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<div class="container p-3">
+		<div class="row justify-content-center">
+			<h1 class="text-center mt-3">Nepal Data</h1>
+			{% for country in countries %}
+				{% if country.Country == 'Nepal' %}
+					<div class="col-sm-6 col-lg-3 mb-3">
+						<div class="card card-1">
+							<div class="card-body">
+								<h5 class="card-title">New Confirmed</h5>
+								<p class="card-text">{{ country.NewConfirmed }}</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-lg-3 mb-3">
+						<div class="card card-2">
+							<div class="card-body">
+								<h5 class="card-title">Total Confirmed</h5>
+								<p class="card-text">{{ country.TotalConfirmed }}</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-lg-3 mb-3">
+						<div class="card card-3">
+							<div class="card-body">
+								<h5 class="card-title">New Deaths</h5>
+								<p class="card-text">{{ country.NewDeaths }}</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-lg-3 mb-3">
+						<div class="card card-4">
+							<div class="card-body">
+								<h5 class="card-title">Total Deaths</h5>
+								<p class="card-text">{{ country.TotalDeaths }}</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-lg-3 mb-3">
+						<div class="card card-5">
+							<div class="card-body">
+								<h5 class="card-title">New Recovered</h5>
+								<p class="card-text">{{ country.NewRecovered }}</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-lg-3 mb-3">
+						<div class="card card-6">
+							<div class="card-body">
+								<h5 class="card-title">Total Recovered</h5>
+								<p class="card-text">{{ country.TotalRecovered }}</p>
+							</div>
+						</div>
+					</div>
+					<p class="text-end"><small><em>Last Updated: {{ country.Date }}</em></small></p>
+				{% endif %}
+			{% endfor %}
+		</div>
+		<div class="mt-5">
+			<h1 class="text-center">2021 Statistics</h1>
+			<table class="table table-striped mt-2">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Date</th>
+						<th scope="col">Confirmed</th>
+						<th scope="col">Deaths</th>
+						<th scope="col">Recovered</th>
+						<th scope="col">Active</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for data in data_per_day %}
+						<tr>
+							<td>{{ forloop.counter }}</td>
+							<td>{{ data.Date }}</td>
+							<td>{{ data.Confirmed }}</td>
+							<td>{{ data.Deaths }}</td>
+							<td>{{ data.Recovered }}</td>
+							<td>{{ data.Active }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock content %}
