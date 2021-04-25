@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap');
+
+body {
+    font-family: 'Baloo Bhai 2', cursive;
+}
+
+.card-1 {
+    background-color: #bbe0e2;
+}
+
+.card-2 {
+    background-color: #f0feff;
+}
+
+.card-3 {
+    background-color: #ff9d9d;
+}
+
+.card-4 {
+    background-color: #ffc8c8;
+}
+
+.card-5 {
+    background-color: #c9fcc9;
+}
+
+.card-6 {
+    background-color: #ebffeb;
+}
+h1{
+    font-size: 1.8rem;
+}
