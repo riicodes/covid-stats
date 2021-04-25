@@ -1,2 +1,2 @@
-# [CovidStats](https://covstats.herokuapp.com/)
-Get the latest covid data
+# *[CovidStats](https://covstats.herokuapp.com/)*
+*Get the latest covid data*
